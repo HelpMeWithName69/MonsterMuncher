@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -500763607218444212}
   m_Layer: 0
   m_Name: Heart
-  m_TagString: Untagged
+  m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,3 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3368538252b3f4a82b935972a4bd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartPrefab: {fileID: 0}
+  movingright: 1
+  width: 10
+  height: 5

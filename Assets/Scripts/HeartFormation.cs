@@ -27,21 +27,21 @@ public class HeartFormation : MonoBehaviour
     {
         if (movingright)
         {
-            transform.position += new Vector3(0.025f, 0);
+            transform.position += new Vector3(0.0025f, 0);
         }
         else
         {
-            transform.position += new Vector3(-0.025f, 0);
+            transform.position += new Vector3(-0.0025f, 0);
         }
 
-        float rightEdgeOfFormation = transform.position.x + (0.0025f * width);
-        float leftEdgeOfFormation = transform.position.x - (0.0025f * width);
+        float rightEdgeOfFormation = transform.position.x + (0.025f * width);
+        float leftEdgeOfFormation = transform.position.x - (0.025f * width);
 
         if (rightEdgeOfFormation > 10)
         {
             movingright = false;
         }
-        if (leftEdgeOfFormation < -1)
+        if (leftEdgeOfFormation < 8)
         {
             movingright = true;
         }

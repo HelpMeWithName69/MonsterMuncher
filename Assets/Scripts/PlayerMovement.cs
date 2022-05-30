@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     float playerSpeed = 0.02f;
     
-    [SerializeField] public float playerHealth = 100f;
-
     private float dirX = 0f;
 
     float xmin;
@@ -63,15 +62,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        playerHealth -= 50f;
-
-        if (playerHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+   
 
 
 }
