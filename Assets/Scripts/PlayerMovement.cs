@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static int Health = 100;
+
     float playerSpeed = 0.02f;
     
     private float dirX = 0f;
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    public void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
 
@@ -60,9 +62,15 @@ public class PlayerMovement : MonoBehaviour
 
         float newX = Mathf.Clamp(transform.position.x, xmin, xmax);
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+
+        
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (Health < 0)
+            {
+                Health--;
+                Application.LoadLevel("Lose");
+            }
+        }
     }
-
-   
-
-
 }

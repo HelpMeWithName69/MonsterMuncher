@@ -5,23 +5,25 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-    private float playerHealth = 100f;
+    public float Health = 100f;
 
     [SerializeField] private Text healthText;
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Heart"))
         {
-            playerHealth = playerHealth - 50f;
-            healthText.text = "Player Health: " + playerHealth;
+            Health = Health - 25f;
+            healthText.text = "Player Health: " + Health;
         }
 
-
-        if (playerHealth <= 0)
+        if (Health <= 0)
         {
+            Health--;
             Application.LoadLevel("Lose");
         }
+
     }
+
 }
